@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: d87e9483751c6c94d909d65a8fbed5b8
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 6176459485132953288
+    second: Cube.012|Action
+  - first:
+      74: -1139137746390669889
+    second: Cube.012|DoorL
+  - first:
+      74: -7793268313440940184
+    second: Cube.012|DoorR
+  - first:
+      74: -8316697155387829168
+    second: Cube.012|DoorR.001
+  - first:
+      74: 8239058813490841872
+    second: Cube.012|InsideDoor
+  - first:
+      74: -1094055134641818284
+    second: Cube.012|WindowL
+  - first:
+      74: -3770360573387887486
+    second: Cube.012|WindowR
+  - first:
+      74: 6829588682457836661
+    second: Cube.023|Action
+  - first:
+      74: 8497901586393689570
+    second: Cube.023|DoorL
+  - first:
+      74: -4301797060209892882
+    second: Cube.023|DoorR
+  - first:
+      74: -3638756785468700865
+    second: Cube.023|DoorR.001
+  - first:
+      74: 1179489088721915335
+    second: Cube.023|InsideDoor
+  - first:
+      74: -5264787755128383510
+    second: Cube.023|WindowL
+  - first:
+      74: 6089536111040664404
+    second: Cube.023|WindowR
+  - first:
+      74: -3895759477105236308
+    second: Porta pB186|Action
+  - first:
+      74: -7496894971290091012
+    second: Porta pB186|DoorL
+  - first:
+      74: 9109883323334020466
+    second: Porta pB186|DoorR
+  - first:
+      74: -7769563509838573828
+    second: Porta pB186|DoorR.001
+  - first:
+      74: 5635303877216854987
+    second: Porta pB186|InsideDoor
+  - first:
+      74: 1163017629742654522
+    second: Porta pB186|WindowL
+  - first:
+      74: 3469160174089962065
+    second: Porta pB186|WindowR
+  - first:
+      74: 1188186462433334241
+    second: Plane002.001|Action
+  - first:
+      74: 4606095525294711722
+    second: Plane002.001|DoorL
+  - first:
+      74: 6762287662293669203
+    second: Plane002.001|DoorR
+  - first:
+      74: 1578968670416097779
+    second: Plane002.001|DoorR.001
+  - first:
+      74: 5811148666843925998
+    second: Plane002.001|InsideDoor
+  - first:
+      74: 3463658140355727835
+    second: Plane002.001|WindowL
+  - first:
+      74: 8136097032201173923
+    second: Plane002.001|WindowR
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
