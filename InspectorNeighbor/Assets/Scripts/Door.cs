@@ -29,6 +29,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
+
         if (isDo == true)
         {
             if (animationControl.openUi == true)

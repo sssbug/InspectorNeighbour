@@ -19547,8 +19547,8 @@ MonoBehaviour:
           m_CallState: 2
   name: Inventory
   priority: 0
-  m_KeyCode: 101
-  m_EaseType: 28
+  m_KeyCode: 122
+  m_EaseType: 4
   m_Duration: 0.7
   m_IgnoreTimeScale: 1
   m_ShowSound: {fileID: 0}
@@ -19598,9 +19598,9 @@ RectTransform:
   m_Father: {fileID: 4139895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 594, y: -260.12}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -190.28, y: 123.63}
   m_SizeDelta: {x: 380.56, y: 247.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2263767301162043644
@@ -23455,8 +23455,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416926081657194664}
-  m_LocalRotation: {x: -0, y: -0.7224999, z: -0, w: 0.691371}
-  m_LocalPosition: {x: 14.632176, y: 3.9300003, z: 13.178776}
+  m_LocalRotation: {x: -0, y: -0.06235879, z: -0, w: 0.9980538}
+  m_LocalPosition: {x: 14.32429, y: 4.28, z: 12.891548}
   m_LocalScale: {x: 2.908737, y: 2.908737, z: 2.908737}
   m_Children:
   - {fileID: 8338988566082236916}
@@ -23464,7 +23464,7 @@ Transform:
   - {fileID: 272993188600917131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -92.523, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -7.15, z: 0}
 --- !u!1 &3893722414765173503
 GameObject:
   m_ObjectHideFlags: 0

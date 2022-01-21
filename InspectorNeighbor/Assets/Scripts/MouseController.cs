@@ -38,11 +38,6 @@ public class MouseController : MonoBehaviour
     float lastFrameMousePosY;
 
 
-    bool found = true;
-
-
-
-
 
     private void Start()
     {
@@ -206,7 +201,7 @@ public class MouseController : MonoBehaviour
     IEnumerator dropItem()
     {
 
-        inspected.transform.rotation = Quaternion.identity;
+        
         yield return new WaitForSeconds(0.2f);
         thirdPerson.enabled = true;
     }
