@@ -17,42 +17,42 @@ public class Door : MonoBehaviour
     {
         mouse = GameObject.Find("MouseController").GetComponent<MouseController>();
         anime = GetComponent<Animator>();
-        animationControl = GameObject.Find("image").GetComponent<AnimationController>();
+        //animationControl = GameObject.Find("image").GetComponent<AnimationController>();
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            animUi = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(i).gameObject.GetComponent<Animator>();
-            animeList.Add(animUi);
-        }
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    animUi = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(i).gameObject.GetComponent<Animator>();
+        //    animeList.Add(animUi);
+        //}
         
     }
 
-    private void Update()
-    {
+    //private void Update()
+    //{
 
-        if (isDo == true)
-        {
-            if (animationControl.openUi == true)
-            {
-                for (int i = 0; i < animeList.Count; i++)
-                {
-                    animeList[i].SetFloat("speed", 1);
-                }
-            }
-        }
-        else
-        {
-            if (isBe == 1)
-            {
-                animationControl.openUi = true;
-                for (int i = 0; i < animeList.Count; i++)
-                {
-                    animeList[i].SetFloat("speed", -1);
-                }
-                isBe = 0;
-            }
-        }
-    }
+    //    if (isDo == true)
+    //    {
+    //        if (animationControl.openUi == true)
+    //        {
+    //            for (int i = 0; i < animeList.Count; i++)
+    //            {
+    //                animeList[i].SetFloat("speed", 1);
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (isBe == 1)
+    //        {
+    //            animationControl.openUi = true;
+    //            for (int i = 0; i < animeList.Count; i++)
+    //            {
+    //                animeList[i].SetFloat("speed", -1);
+    //            }
+    //            isBe = 0;
+    //        }
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

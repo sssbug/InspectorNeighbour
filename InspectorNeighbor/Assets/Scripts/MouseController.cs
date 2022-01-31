@@ -21,7 +21,8 @@ public class MouseController : MonoBehaviour
 
     Vector3 orginalScale;
     Vector3 originalPos;
-    bool onInspected = false;
+    [HideInInspector]
+     public bool onInspected = false;
     GameObject inspected;
 
 
@@ -42,14 +43,12 @@ public class MouseController : MonoBehaviour
     private void Start()
     {
 
-        animationControl = GameObject.Find("image").GetComponent<AnimationController>();
+        
         thirdPerson = GameObject.Find("PlayerArmature").GetComponent<ThirdPersonController>();
     }
 
     public void Update()
     {
-
-
         Mouse();
     }
 

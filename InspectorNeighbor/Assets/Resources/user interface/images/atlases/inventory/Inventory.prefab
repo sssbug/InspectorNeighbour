@@ -1,0 +1,362 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+PrefabInstance:
+  serializedVersion: 2
+  m_RootGameObject: {fileID: 1374295336818881}
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+--- !u!1 &1374295336818881
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 100100000}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4253658780142143}
+  - component: {fileID: 114804224716419165}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4253658780142143
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 100100000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374295336818881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114804224716419165
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 100100000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374295336818881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2a9b77f11ada944a091edb9c075fcf, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 2100000, guid: d4b9f6cb428e38647968900b06c18199, type: 2}
+  sprites:
+  - name: FrontDoorKey
+    outer:
+      serializedVersion: 2
+      x: 1656
+      y: 1792
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1656
+      y: 1792
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: PassportInside
+    outer:
+      serializedVersion: 2
+      x: 622
+      y: 1531
+      width: 518
+      height: 517
+    inner:
+      serializedVersion: 2
+      x: 622
+      y: 1531
+      width: 518
+      height: 517
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BlankInventoryItem
+    outer:
+      serializedVersion: 2
+      x: 622
+      y: 1466
+      width: 64
+      height: 64
+    inner:
+      serializedVersion: 2
+      x: 622
+      y: 1466
+      width: 64
+      height: 64
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: PassPort
+    outer:
+      serializedVersion: 2
+      x: 1656
+      y: 1535
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1656
+      y: 1535
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BoardingPass
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 144
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 144
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo
+    outer:
+      serializedVersion: 2
+      x: 513
+      y: 144
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 513
+      y: 144
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo1
+    outer:
+      serializedVersion: 2
+      x: 1539
+      y: 1170
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1539
+      y: 1170
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo2
+    outer:
+      serializedVersion: 2
+      x: 1026
+      y: 657
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1026
+      y: 657
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BasementKey
+    outer:
+      serializedVersion: 2
+      x: 1026
+      y: 400
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1026
+      y: 400
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: AtticKey
+    outer:
+      serializedVersion: 2
+      x: 1026
+      y: 143
+      width: 256
+      height: 256
+    inner:
+      serializedVersion: 2
+      x: 1026
+      y: 143
+      width: 256
+      height: 256
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: FrontDoorKey_Examine
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 914
+      width: 512
+      height: 512
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 914
+      width: 512
+      height: 512
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BasementKey_Examine
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 401
+      width: 512
+      height: 512
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 401
+      width: 512
+      height: 512
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: AtticKey_Examine
+    outer:
+      serializedVersion: 2
+      x: 1141
+      y: 1534
+      width: 514
+      height: 514
+    inner:
+      serializedVersion: 2
+      x: 1141
+      y: 1534
+      width: 514
+      height: 514
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BoardingPass_Examine
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1427
+      width: 621
+      height: 621
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1427
+      width: 621
+      height: 621
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo2_Examine
+    outer:
+      serializedVersion: 2
+      x: 513
+      y: 914
+      width: 512
+      height: 512
+    inner:
+      serializedVersion: 2
+      x: 513
+      y: 914
+      width: 512
+      height: 512
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo1_Examine
+    outer:
+      serializedVersion: 2
+      x: 513
+      y: 401
+      width: 512
+      height: 512
+    inner:
+      serializedVersion: 2
+      x: 513
+      y: 401
+      width: 512
+      height: 512
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SamLockerCombo_Examine
+    outer:
+      serializedVersion: 2
+      x: 1026
+      y: 914
+      width: 512
+      height: 512
+    inner:
+      serializedVersion: 2
+      x: 1026
+      y: 914
+      width: 512
+      height: 512
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}

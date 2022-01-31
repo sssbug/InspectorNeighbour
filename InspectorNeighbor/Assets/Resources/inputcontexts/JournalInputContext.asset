@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51015f063c540e14cb21e64f2907e86d, type: 3}
+  m_Name: JournalInputContext
+  m_EditorClassIdentifier:
+  Controls:
+  - FriendlyName: UnCrouch
+    ControlName: Crouch
+    Mappable: 0
+    DesiredState: 0
+    Exclusive: 0
+    Raw: 0
+  - FriendlyName: UnZoom
+    ControlName: Zoom
+    Mappable: 0
+    DesiredState: 0
+    Exclusive: 0
+    Raw: 0
+  - FriendlyName: Exit Journal Reader
+    ControlName: ExitJournalReader
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: Next Journal Page
+    ControlName: NextPage
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 0
+    Raw: 0
+  - FriendlyName: Previous Journal Page
+    ControlName: PreviousPage
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 0
+    Raw: 0
+  - FriendlyName: Proceed Or Exit
+    ControlName: ProceedOrExit
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: Previous or Exit
+    ControlName: PreviousOrExit
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: Toggle Journal Text
+    ControlName: ToggleJournalText
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  Commands:
+  - CrouchEnd
+  - UnZoom
+  - ExitJournalReader
+  - NextPage
+  - PreviousPage
+  - ProceedOrExit
+  - PreviousOrExit
+  - ToggleJournalText
+  AllowsMovement: 0
+  AllowsMouseLook: 0
+  MasksOtherInput: 1
+  PausesGame: 0
+  HidesReticule: 1
+  HidesHUD: 1
+  ShowsCursor: 1
+  AllowsFrob: 0
+  DisallowsButtonKeys: 0
+  DisallowsMenuSubmit: 0
+  FrobLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  OverridesFOV: 0
+  OverridesMouseSensitivity: 0
+  LocksCursor: 0
+  OverridesProperties: 1
+  ControllerPresetPath:
+  CameraPresetPath:

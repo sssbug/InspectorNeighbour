@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51015f063c540e14cb21e64f2907e86d, type: 3}
+  m_Name: MainMenuInputContext
+  m_EditorClassIdentifier:
+  Controls:
+  - FriendlyName: Back
+    ControlName: Back
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: Escape
+    ControlName: Escape
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: uncrouch
+    ControlName: Crouch
+    Mappable: 0
+    DesiredState: 0
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: unzoom
+    ControlName: Zoom
+    Mappable: 0
+    DesiredState: 0
+    Exclusive: 1
+    Raw: 0
+  - FriendlyName: Menu
+    ControlName: Menu
+    Mappable: 0
+    DesiredState: 1
+    Exclusive: 1
+    Raw: 0
+  Commands:
+  - Back
+  - Back
+  - CrouchEnd
+  - UnZoom
+  - Back
+  AllowsMovement: 0
+  AllowsMouseLook: 0
+  MasksOtherInput: 1
+  PausesGame: 1
+  HidesReticule: 1
+  HidesHUD: 1
+  ShowsCursor: 1
+  AllowsFrob: 0
+  DisallowsButtonKeys: 0
+  DisallowsMenuSubmit: 0
+  FrobLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  OverridesFOV: 0
+  OverridesMouseSensitivity: 0
+  LocksCursor: 0
+  OverridesProperties: 1
+  ControllerPresetPath:
+  CameraPresetPath:
