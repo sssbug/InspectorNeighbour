@@ -22,7 +22,7 @@ public class MouseController : MonoBehaviour
     Vector3 orginalScale;
     Vector3 originalPos;
     [HideInInspector]
-     public bool onInspected = false;
+    public bool onInspected = false;
     GameObject inspected;
 
 
@@ -43,7 +43,7 @@ public class MouseController : MonoBehaviour
     private void Start()
     {
 
-        
+
         thirdPerson = GameObject.Find("PlayerArmature").GetComponent<ThirdPersonController>();
     }
 
@@ -163,7 +163,7 @@ public class MouseController : MonoBehaviour
 
                         float _inputDifferenceY = Input.mousePosition.x - lastFrameMousePosX;
                         float _inputDifferenceX = Input.mousePosition.y - lastFrameMousePosY;
-                        rotationY = Quaternion.Euler(0f, -_inputDifferenceY * sensitivity * Time.deltaTime, _inputDifferenceX * sensitivity * Time.deltaTime);
+                        rotationY = Quaternion.Euler(0f, -_inputDifferenceY * sensitivity * Time.deltaTime, -_inputDifferenceX * sensitivity * Time.deltaTime);
                         lastFrameMousePosX = Input.mousePosition.x;
                         lastFrameMousePosY = Input.mousePosition.y;
 
@@ -200,9 +200,8 @@ public class MouseController : MonoBehaviour
     IEnumerator dropItem()
     {
 
-        
+
         yield return new WaitForSeconds(0.2f);
         thirdPerson.enabled = true;
     }
 }
-
