@@ -13,10 +13,10 @@ public class MouseController : MonoBehaviour
     public Animator anim;
     AnimationController animationControl;
 
+    public GameObject gamePrefab;
+    public GameObject gamePre;
 
-
-
-
+    GameObject game;
     public Transform playerSocet;
 
     Vector3 orginalScale;
@@ -187,6 +187,43 @@ public class MouseController : MonoBehaviour
             inspected.transform.position = Vector3.Lerp(inspected.transform.position, originalPos, 0.2f);
 
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+            {
+                game = Instantiate(gamePrefab, myRayCastHit.point, Quaternion.identity);
+            }
+        }
+        else if (Input.GetKey(KeyCode.X))
+        {
+            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+            {
+
+                game.transform.position = myRayCastHit.point;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+            {
+                game = Instantiate(gamePre, myRayCastHit.point, Quaternion.identity);
+                
+            }
+        }
+        else if (Input.GetKey(KeyCode.V))
+        {
+            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+            {
+
+                game.transform.position = myRayCastHit.point;
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.V))
+        {
+            Destroy(game);
+        }
+
     }
     IEnumerator pickupItem()
     {
