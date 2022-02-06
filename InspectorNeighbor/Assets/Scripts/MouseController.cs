@@ -163,7 +163,7 @@ public class MouseController : MonoBehaviour
 
                         float _inputDifferenceY = Input.mousePosition.x - lastFrameMousePosX;
                         float _inputDifferenceX = Input.mousePosition.y - lastFrameMousePosY;
-                        rotationY = Quaternion.Euler(0f, -_inputDifferenceY * sensitivity * Time.deltaTime, -_inputDifferenceX * sensitivity * Time.deltaTime);
+                        rotationY = Quaternion.Euler(0f, _inputDifferenceY * sensitivity * Time.deltaTime, -_inputDifferenceX * sensitivity * Time.deltaTime);
                         lastFrameMousePosX = Input.mousePosition.x;
                         lastFrameMousePosY = Input.mousePosition.y;
 

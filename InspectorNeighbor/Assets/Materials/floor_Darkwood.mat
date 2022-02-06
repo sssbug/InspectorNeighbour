@@ -3,12 +3,13 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: floor_Darkwood
   m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords:
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,8 +21,9 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c92ffe691b9732246a203ec60aacb50f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 5.5, y: 16.23}
         m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats: []
     m_Colors:
     - _Color: {r: 0.8955224, g: 0.8955224, b: 0.8955224, a: 1}
+  m_BuildTextureStacks: []
