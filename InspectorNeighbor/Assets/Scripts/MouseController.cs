@@ -187,42 +187,54 @@ public class MouseController : MonoBehaviour
             inspected.transform.position = Vector3.Lerp(inspected.transform.position, originalPos, 0.2f);
 
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-            {
-                game = Instantiate(gamePrefab, myRayCastHit.point, Quaternion.identity);
-            }
-        }
-        else if (Input.GetKey(KeyCode.X))
-        {
-            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-            {
 
-                game.transform.position = myRayCastHit.point;
-            }
-        }
+        if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+        {
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+            if (myRayCastHit.collider.gameObject.layer == 10)
             {
-                game = Instantiate(gamePre, myRayCastHit.point, Quaternion.identity);
-                
-            }
-        }
-        else if (Input.GetKey(KeyCode.V))
-        {
-            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-            {
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                    {
+                        game = Instantiate(gamePrefab, myRayCastHit.point, Quaternion.identity);
+                        game.transform.localRotation = Quaternion.Euler(0,-90,0);
+                    }
+                }
+                else if (Input.GetKey(KeyCode.X))
+                {
+                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                    {
 
-                game.transform.position = myRayCastHit.point;
+                        game.transform.position = myRayCastHit.point; 
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.V))
+                {
+                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                    {
+                        game = Instantiate(gamePre, myRayCastHit.point, Quaternion.identity);
+
+                    }
+                }
+                else if (Input.GetKey(KeyCode.V))
+                {
+                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                    {
+
+                        game.transform.position = myRayCastHit.point;
+                    }
+                }
+                else if (Input.GetKeyUp(KeyCode.V))
+                {
+                    Destroy(game);
+                }
             }
+            
         }
-        else if (Input.GetKeyUp(KeyCode.V))
-        {
-            Destroy(game);
-        }
+        
+
+        
 
     }
     IEnumerator pickupItem()

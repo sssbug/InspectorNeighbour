@@ -10,8 +10,10 @@ public class SnapshotCamera : MonoBehaviour
     [Header("Photo Taker")]
     private Image photoDisplayArea;
     private Texture2D screenCapture;
-
+    public List<GameObject> SsSpawn = new List<GameObject>();
+    public List<Sprite> SsSprite = new List<Sprite>();
     public GameObject game;
+
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class SnapshotCamera : MonoBehaviour
         {
             StartCoroutine(CapturePhoto());
         }
+        
     }
 
 
@@ -47,11 +50,16 @@ public class SnapshotCamera : MonoBehaviour
     {
         
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f,0.0f,screenCapture.width,screenCapture.height), new Vector2(0.5f,0.5f),100.0f);
-
-        GameObject spawn = Instantiate(game,player.transform.position,Quaternion.identity);
+        SsSprite.Add(photoSprite);
+        /*
+        GameObject spawn = new GameObject();
+        spawn = game;
         photoDisplayArea = spawn.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>();
-        
+
         photoDisplayArea.sprite = photoSprite;
+
+        //SsSpawn.Add(spawn);
+        */
     }
     //    Camera snapCam;
     //    int resWith = 256;
