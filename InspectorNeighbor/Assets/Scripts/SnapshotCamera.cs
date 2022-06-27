@@ -13,8 +13,8 @@ public class SnapshotCamera : MonoBehaviour
     public List<GameObject> SsSpawn = new List<GameObject>();
     public List<Sprite> SsSprite = new List<Sprite>();
     public GameObject game;
-
-
+    public GameObject slot;
+    public GameObject album;
     private void Start()
     {
         player = GameObject.Find("PlayerArmature").GetComponent<Player>();
@@ -50,15 +50,27 @@ public class SnapshotCamera : MonoBehaviour
     {
         
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f,0.0f,screenCapture.width,screenCapture.height), new Vector2(0.5f,0.5f),100.0f);
+
         SsSprite.Add(photoSprite);
-        /*
+        
+
+        GameObject game = Instantiate(slot);
+        game.transform.position = album.transform.GetChild(0).transform.position;
+        game.transform.rotation = album.transform.GetChild(0).transform.rotation;
+        game.transform.parent = album.transform.GetChild(0).transform;
+        Image slote = game.GetComponent<Image>();
+        slote.sprite = SsSprite[SsSprite.Count - 1];
+
+
+
+        /*  
         GameObject spawn = new GameObject();
         spawn = game;
         photoDisplayArea = spawn.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>();
 
         photoDisplayArea.sprite = photoSprite;
 
-        //SsSpawn.Add(spawn);
+        SsSpawn.Add(spawn);
         */
     }
     //    Camera snapCam;

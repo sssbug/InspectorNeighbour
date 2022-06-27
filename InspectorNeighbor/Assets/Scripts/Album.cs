@@ -7,11 +7,7 @@ public class Album : MonoBehaviour
 {
     public GameObject slot;
     private SnapshotCamera snapShot;
-
-    private void Start()
-    {
-        snapShot = GameObject.Find("CameraManager").GetComponent<SnapshotCamera>();
-    }
+    
 
     private void OnEnable()
     {
@@ -22,17 +18,13 @@ public class Album : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             GameObject game = Instantiate(slot);
             game.transform.parent = this.transform.GetChild(0).transform;
             Image slote = game.GetComponent<Image>();
-             
-            foreach (var item in snapShot.SsSprite)
-            {
-                Debug.Log("ne");
-                slote.sprite = item;
-            }
+            slote.sprite = snapShot.SsSprite[snapShot.SsSprite.Count - 1];
+            
         }
         
     }
