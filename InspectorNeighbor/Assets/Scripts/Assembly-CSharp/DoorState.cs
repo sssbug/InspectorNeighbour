@@ -1,8 +1,0 @@
-public enum DoorState
-{
-	CLOSED = 0,
-	OPEN_LEFT = 1,
-	OPEN_RIGHT = 2,
-	PARTIAL_OPEN_LEFT = 3,
-	PARTIAL_OPEN_RIGHT = 4,
-}
