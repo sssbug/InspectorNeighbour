@@ -6,20 +6,14 @@ using UnityEngine.UI;
 
 public class SnapshotCamera : MonoBehaviour
 {
-    Player player;
-    [Header("Photo Taker")]
-    private Image photoDisplayArea;
-    private Texture2D screenCapture;
-    public List<GameObject> SsSpawn = new List<GameObject>();
-    public List<Sprite> SsSprite = new List<Sprite>();
-    public GameObject game;
-    public GameObject slot;
-    public GameObject album;
+    private Variables variables;
+
+
     private void Start()
     {
-        player = GameObject.Find("PlayerArmature").GetComponent<Player>();
         
-        
+        variables = GameObject.Find("VariablesController").GetComponent<Variables>();
+
     }
 
 
@@ -38,10 +32,10 @@ public class SnapshotCamera : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0,0,Screen.width,Screen.height);
-        screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-        screenCapture.ReadPixels(regionToRead,0,0,false);
+        variables.screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        variables.screenCapture.ReadPixels(regionToRead,0,0,false);
 
-        screenCapture.Apply();
+        variables.screenCapture.Apply();
         
         ShowPhoto();
     }
@@ -49,17 +43,17 @@ public class SnapshotCamera : MonoBehaviour
     void ShowPhoto()
     {
         
-        Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f,0.0f,screenCapture.width,screenCapture.height), new Vector2(0.5f,0.5f),100.0f);
-        SsSprite.Add(photoSprite);
+        Sprite photoSprite = Sprite.Create(variables.screenCapture, new Rect(0.0f,0.0f, variables.screenCapture.width, variables.screenCapture.height), new Vector2(0.5f,0.5f),100.0f);
+        variables.SsSprite.Add(photoSprite);
 
         
 
-        GameObject game = Instantiate(slot);
-        game.transform.position = album.transform.GetChild(0).transform.position;
-        game.transform.rotation = album.transform.GetChild(0).transform.rotation;
-        game.transform.parent = album.transform.GetChild(0).transform;
+        GameObject game = Instantiate(variables.slot);
+        game.transform.position = variables.album.transform.GetChild(0).transform.position;
+        game.transform.rotation = variables.album.transform.GetChild(0).transform.rotation;
+        game.transform.parent = variables.album.transform.GetChild(0).transform;
         Image slote = game.GetComponent<Image>();
-        slote.sprite = SsSprite[SsSprite.Count - 1];
+        slote.sprite = variables.SsSprite[variables.SsSprite.Count - 1];
 
 
 
