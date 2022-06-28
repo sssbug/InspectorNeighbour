@@ -42,7 +42,10 @@ namespace StarterAssets
                     LookInput(value.Get<Vector2>());
                 }
             }
-            else
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+
+            }
             {
                 cursorLocked = true;
                 SetCursorState(cursorLocked);

@@ -7,6 +7,8 @@ using StarterAssets;
 public class MouseController : MonoBehaviour
 {
 
+    public Vector2 look;
+
     Camera playerCamera;
     GameObject player;
     [HideInInspector]
@@ -38,8 +40,10 @@ public class MouseController : MonoBehaviour
     float lastFrameMousePosX;
     float lastFrameMousePosY;
 
+    public GameObject album;
 
-
+    public bool cursorLocked = true;
+    public bool cursorInputForLook = true;
     private void Start()
     {
 
@@ -69,7 +73,6 @@ public class MouseController : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-
                         inspected = myRayCastHit.transform.gameObject;
                         originalPos = myRayCastHit.transform.position;
                         onInspected = true;
@@ -80,9 +83,6 @@ public class MouseController : MonoBehaviour
                     }
 
                 }
-
-
-
             }
         }
         else if (Input.GetKeyUp(KeyCode.E) && onInspected == true)
@@ -195,46 +195,51 @@ public class MouseController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.X))
                 {
-                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-                    {
-                        game = Instantiate(gamePrefab, myRayCastHit.point, Quaternion.identity);
-                        game.transform.localRotation = Quaternion.Euler(0,-90,0);
-                    }
+
+                    game = Instantiate(gamePrefab, myRayCastHit.point, Quaternion.identity);
+                    game.transform.localRotation = Quaternion.Euler(0, -90, 0);
+
                 }
                 else if (Input.GetKey(KeyCode.X))
                 {
-                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-                    {
 
-                        game.transform.position = myRayCastHit.point; 
-                    }
+                    game.transform.position = myRayCastHit.point;
+
+                }
+                else if (Input.GetKeyUp(KeyCode.X))
+                {
+                    album.transform.position = myRayCastHit.point + new Vector3(1, 0, -0.2f);
+                    album.SetActive(true);
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    
+                    cursorInputForLook = false;
+                    
+                   
+                    thirdPerson.LockCameraPosition = true;
+
                 }
                 else if (Input.GetKeyDown(KeyCode.V))
                 {
-                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-                    {
-                        game = Instantiate(gamePre, myRayCastHit.point, Quaternion.identity);
 
-                    }
+                    game = Instantiate(gamePre, myRayCastHit.point, Quaternion.identity);
+
                 }
                 else if (Input.GetKey(KeyCode.V))
                 {
-                    if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
-                    {
+                    game.transform.position = myRayCastHit.point;
 
-                        game.transform.position = myRayCastHit.point;
-                    }
                 }
                 else if (Input.GetKeyUp(KeyCode.V))
                 {
                     Destroy(game);
                 }
             }
-            
-        }
-        
 
-        
+        }
+
+
+
 
     }
     IEnumerator pickupItem()
@@ -253,4 +258,7 @@ public class MouseController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         thirdPerson.enabled = true;
     }
+    
+
+    
 }

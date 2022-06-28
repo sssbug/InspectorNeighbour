@@ -50,8 +50,8 @@ public class SnapshotCamera : MonoBehaviour
     {
         
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f,0.0f,screenCapture.width,screenCapture.height), new Vector2(0.5f,0.5f),100.0f);
-
         SsSprite.Add(photoSprite);
+
         
 
         GameObject game = Instantiate(slot);
@@ -63,7 +63,10 @@ public class SnapshotCamera : MonoBehaviour
 
 
 
-        /*  
+
+
+
+        /*
         GameObject spawn = new GameObject();
         spawn = game;
         photoDisplayArea = spawn.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>();

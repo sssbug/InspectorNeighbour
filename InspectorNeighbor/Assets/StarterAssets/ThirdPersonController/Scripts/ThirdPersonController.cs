@@ -158,10 +158,7 @@ namespace StarterAssets
 			{
 				LockCameraPosition = true;
 			}
-			else
-			{
-				LockCameraPosition = false;
-			}
+			
 			if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
 			{
 				_cinemachineTargetYaw += _input.look.x * Time.deltaTime/5;
