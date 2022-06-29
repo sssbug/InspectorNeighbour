@@ -33,22 +33,24 @@ public class MouseController : MonoBehaviour
         RaycastHit myRayCastHit;
         if (Input.GetKey(KeyCode.E))
         {
+            variables.mouseLock = false;
+            variables.mouseVisible = true;
+            variables.screenLock = true;
+            variables.MovementLock = true;
+
             if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
             {
                 if (myRayCastHit.collider.gameObject.layer == 6 && !variables.onInspected)
                 {
-
                     if (Input.GetMouseButtonDown(0))
                     {
                         variables.inspected = myRayCastHit.transform.gameObject;
                         variables.originalPos = myRayCastHit.transform.position;
                         variables.onInspected = true;
                         variables.orginalScale = myRayCastHit.transform.localScale;
-
                         myRayCastHit.rigidbody.isKinematic = true;
                         StartCoroutine(pickupItem());
                     }
-
                 }
             }
         }
@@ -56,43 +58,23 @@ public class MouseController : MonoBehaviour
         {
 
             StartCoroutine(dropItem());
+            variables.mouseLock = true;
+            variables.mouseVisible = false;
+            variables.screenLock = false;
+            variables.MovementLock = false;
+
+
 
             variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
             variables.onInspected = false;
         }
-        //else
-        //{
-
-        //    if (Physics.Raycast(myRay, out myRayCastHit, 3f))
-        //    {
-        //        if (myRayCastHit.collider.gameObject.layer == 7)
-        //        {
-        //            variables.anim = myRayCastHit.collider.gameObject.transform.parent.gameObject.GetComponent<Animator>();
-
-        //            if (myRayCastHit.collider.name == "Cube.010")
-        //            {
-        //                if (Input.GetKey(KeyCode.R))
-        //                {
-        //                    variables.anim.SetFloat("speedL", 1);
-        //                }
-        //            }
-        //            else if (myRayCastHit.collider.name == "Cube.011")
-        //            {
-        //                if (Input.GetKey(KeyCode.R))
-        //                {
-        //                    variables.anim.SetFloat("speedR", 1);
-        //                }
-        //            }
-        //            else
-        //            {
-        //                if (Input.GetKey(KeyCode.R))
-        //                {
-        //                    variables.anim.SetFloat("speed", 1);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            variables.mouseLock = true;
+            variables.mouseVisible = false;
+            variables.screenLock = false;
+            variables.MovementLock = false;
+        }
 
         if (variables.onInspected)
         {
@@ -150,7 +132,7 @@ public class MouseController : MonoBehaviour
         }
         else if (variables.inspected != null)
         {
-
+           
             variables.inspected.transform.SetParent(null);
             variables.inspected.transform.position = Vector3.Lerp(variables.inspected.transform.position, variables.originalPos, 0.2f);
 
@@ -164,44 +146,23 @@ public class MouseController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.X))
                 {
 
-                    variables.games = Instantiate(variables.gamePrefab, myRayCastHit.point, Quaternion.identity);
-                    variables.games.transform.localRotation = Quaternion.Euler(0, -90, 0);
+                    variables.pinClone = Instantiate(variables.pin, myRayCastHit.point, Quaternion.identity);
+                    variables.pinClone.transform.localRotation = Quaternion.Euler(0, -90, 0);
 
                 }
                 else if (Input.GetKey(KeyCode.X))
                 {
 
-                    variables.games.transform.position = myRayCastHit.point;
+                    variables.pinClone.transform.position = myRayCastHit.point;
 
                 }
                 else if (Input.GetKeyUp(KeyCode.X))
                 {
                     variables.album.transform.position = myRayCastHit.point + new Vector3(1, 0, -0.2f);
                     variables.album.SetActive(true);
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.None;
-
-                    variables.cursorInputForLook = false;
-
-
-                    variables.LockCameraPosition = true;
-
+                    
                 }
-                else if (Input.GetKeyDown(KeyCode.V))
-                {
-
-                    variables.game = Instantiate(variables.gamePre, myRayCastHit.point, Quaternion.identity);
-
-                }
-                else if (Input.GetKey(KeyCode.V))
-                {
-                    variables.games.transform.position = myRayCastHit.point;
-
-                }
-                else if (Input.GetKeyUp(KeyCode.V))
-                {
-                    Destroy(variables.games);
-                }
+                
             }
 
         }
