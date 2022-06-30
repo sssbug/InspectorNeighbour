@@ -36,6 +36,7 @@ public class Variables : MonoBehaviour
     
     public GameObject pin;
     public GameObject pin1;
+    [HideInInspector]
     public GameObject inspected;
 
     
@@ -73,9 +74,9 @@ public class Variables : MonoBehaviour
     public float mouseSensivity = 100f;
     [HideInInspector]
     public float xRotation = 0f;
-    public bool mouseLock = true;
-    public bool mouseVisible = false;
-    public bool screenLock = false;
+    public bool mouseLock = false; 
+    public bool mouseVisible = true;
+    public bool screenLock = true;
 
     [Header("PlayerMove")]
 

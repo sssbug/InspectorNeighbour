@@ -47,11 +47,17 @@ public class SnapshotCamera : MonoBehaviour
         variables.SsSprite.Add(photoSprite);
 
 
-
+        Transform child = variables.album.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0);
         GameObject game = Instantiate(variables.slot);
-        game.transform.position = variables.album.transform.GetChild(0).transform.position;
-        game.transform.rotation = variables.album.transform.GetChild(0).transform.rotation;
-        game.transform.parent = variables.album.transform.GetChild(0).transform;
+        if (variables.SsSprite.Count >= 8)
+        {
+            child.GetComponent<RectTransform>().offsetMin += new Vector2(child.GetComponent<RectTransform>().offsetMin.x, -0.349f);
+        }
+        
+        game.transform.position = child.transform.position;
+        game.transform.rotation = child.transform.rotation;
+        game.transform.parent = child.transform;
+        
         Image slote = game.GetComponent<Image>();
         slote.sprite = variables.SsSprite[variables.SsSprite.Count - 1];
 

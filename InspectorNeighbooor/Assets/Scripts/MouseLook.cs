@@ -12,8 +12,8 @@ public class MouseLook : MonoBehaviour
 
         variables = GameObject.Find("VariablesController").GetComponent<Variables>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        variables.mouseVisible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        variables.mouseVisible = true; 
     }
 
     
