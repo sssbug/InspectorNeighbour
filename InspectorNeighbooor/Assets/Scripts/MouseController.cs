@@ -40,15 +40,20 @@ public class MouseController : MonoBehaviour
 
             if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
             {
-                if (myRayCastHit.collider.gameObject.layer == 6 && !variables.onInspected)
+                if (myRayCastHit.collider.gameObject.layer == 7 && !variables.onInspected)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
                         variables.inspected = myRayCastHit.transform.gameObject;
                         variables.originalPos = myRayCastHit.transform.position;
+                        variables.originalRot = myRayCastHit.transform.rotation;
                         variables.onInspected = true;
                         variables.orginalScale = myRayCastHit.transform.localScale;
-                        myRayCastHit.rigidbody.isKinematic = true;
+                        if (variables.inspected.GetComponent<Rigidbody>() != null)
+                        {
+                            myRayCastHit.rigidbody.isKinematic = true;
+                        }
+                        
                         StartCoroutine(pickupItem());
                     }
                 }
@@ -63,11 +68,17 @@ public class MouseController : MonoBehaviour
             variables.screenLock = false;
             variables.MovementLock = false;
 
-
-
-            variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
+            
+            if (variables.inspected.GetComponent<Rigidbody>() != null)
+            {
+                variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
+            }
+            
             variables.onInspected = false;
         }
+
+
+
         if (Input.GetKeyUp(KeyCode.E))
         {
             variables.mouseLock = true;
@@ -135,34 +146,46 @@ public class MouseController : MonoBehaviour
            
             variables.inspected.transform.SetParent(null);
             variables.inspected.transform.position = Vector3.Lerp(variables.inspected.transform.position, variables.originalPos, 0.2f);
-
+            variables.inspected.transform.rotation = Quaternion.Euler(variables.originalRot.x, variables.originalRot.y, -90);
         }
 
-        if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+        if (Physics.Raycast(myRay, out myRayCastHit, 5))
         {
-
+            // E tusunu kapat
             if (myRayCastHit.collider.gameObject.layer == 10)
             {
                 if (Input.GetKeyDown(KeyCode.X))
                 {
 
-                    variables.pinClone = Instantiate(variables.pin, myRayCastHit.point, Quaternion.identity);
-                    variables.pinClone.transform.localRotation = Quaternion.Euler(0, -90, 0);
+                    variables.pinClone = Instantiate(variables.pin, myRayCastHit.point + new Vector3(-.1f,0,0), Quaternion.identity);
+                    variables.pinClone.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
                 }
-                else if (Input.GetKey(KeyCode.X))
+                if (Input.GetKey(KeyCode.X))
                 {
-
-                    variables.pinClone.transform.position = myRayCastHit.point;
+                    if (!variables.pinClone)
+                    {
+                        variables.pinClone = Instantiate(variables.pin, myRayCastHit.point + new Vector3(-.1f, 0, 0), Quaternion.identity);
+                        variables.pinClone.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                    }
+                    variables.pinClone.transform.position = myRayCastHit.point + new Vector3(-.06f, 0, 0);
 
                 }
-                else if (Input.GetKeyUp(KeyCode.X))
+                if (Input.GetKeyUp(KeyCode.X))
                 {
-                    variables.album.transform.position = myRayCastHit.point + new Vector3(1, 0, -0.2f);
-                    variables.album.SetActive(true);
-                    
+                    if (myRayCastHit.collider.gameObject.layer != 6)
+                    {
+
+                        variables.pinList.Add(variables.pinClone);
+                        variables.album.SetActive(true);
+                        variables.album.transform.position = myRayCastHit.point + new Vector3(0.2f, -.3f, .6f);
+                        variables.mouseLock = false;
+                        variables.mouseVisible = true;
+                        variables.screenLock = true;
+                        variables.MovementLock = true;
+                    }
                 }
-                
+                 
             }
 
         }

@@ -26,6 +26,7 @@ public class Variables : MonoBehaviour
 
     public Vector3 orginalScale;
     public Vector3 originalPos;
+    public Quaternion originalRot;
     public Vector2 look;
     public Quaternion rotationY;
     public Transform playerSocet;
@@ -35,7 +36,7 @@ public class Variables : MonoBehaviour
 
     
     public GameObject pin;
-    public GameObject pin1;
+    
     [HideInInspector]
     public GameObject inspected;
 
@@ -74,9 +75,9 @@ public class Variables : MonoBehaviour
     public float mouseSensivity = 100f;
     [HideInInspector]
     public float xRotation = 0f;
-    public bool mouseLock = false; 
-    public bool mouseVisible = true;
-    public bool screenLock = true;
+    public bool mouseLock; 
+    public bool mouseVisible;
+    public bool screenLock;
 
     [Header("PlayerMove")]
 
@@ -84,5 +85,13 @@ public class Variables : MonoBehaviour
 
     public bool MovementLock = false;
     public float PlayerSpeed;
+
+
+    [Header("PhotoPut")]
+
+    public List<GameObject> pinList = new List<GameObject>();
+    public List<GameObject> cardList = new List<GameObject>();
+    public GameObject card;
+
 
 }
