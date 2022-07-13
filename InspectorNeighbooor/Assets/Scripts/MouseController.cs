@@ -31,7 +31,7 @@ public class MouseController : MonoBehaviour
         variables.playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         Ray myRay = variables.playerCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit myRayCastHit;
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             variables.mouseLock = false;
             variables.mouseVisible = true;
@@ -59,7 +59,7 @@ public class MouseController : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(KeyCode.E) && variables.onInspected == true)
+        else if (Input.GetKeyUp(KeyCode.Q) && variables.onInspected == true)
         {
 
             StartCoroutine(dropItem());
@@ -79,7 +79,7 @@ public class MouseController : MonoBehaviour
 
 
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             variables.mouseLock = true;
             variables.mouseVisible = false;
