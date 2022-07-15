@@ -29,25 +29,21 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
                 Vector3 move = transform.right * x + transform.forward * z;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
                 Vector3 move = transform.right * x + transform.forward * z;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
                 Vector3 move = transform.right * x + transform.forward * z;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
                 Vector3 move = transform.right * x + transform.forward * z;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.W))
@@ -55,26 +51,26 @@ public class PlayerMove : MonoBehaviour
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isWalk", true);
 
+
                 Vector3 move =  transform.forward * z;
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
 
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                Vector3 move = transform.forward * z;
 
+                Vector3 move = transform.forward * z;
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
+
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 Vector3 move = transform.right * x;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 Vector3 move = transform.right * x;
-
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
             }
             else

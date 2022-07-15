@@ -14637,6 +14637,7 @@ MonoBehaviour:
   rotationY: {x: 0, y: 0, z: 0, w: 0}
   playerSocet: {fileID: 3077423454883582281}
   playerCamera: {fileID: 3077423455304828900}
+  cameraBody: {fileID: 0}
   pin: {fileID: 2328667269616316337, guid: e2fd78731bc5fa640a57509d4f157cbb, type: 3}
   inspected: {fileID: 0}
   player: {fileID: 0}
@@ -14652,6 +14653,7 @@ MonoBehaviour:
   playerBody: {fileID: 2067985804124944517}
   mouseSensivity: 34
   xRotation: 0
+  yRotation: 0
   mouseLock: 1
   mouseVisible: 0
   screenLock: 0
@@ -28616,8 +28618,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3077423455304828902}
-  m_LocalRotation: {x: 0.024050193, y: -0, z: -0, w: 0.9997108}
-  m_LocalPosition: {x: 0.012686243, y: 0.13199973, z: 0.124}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3077423454883582281}
@@ -42095,8 +42097,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6417415857176009572}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.021, y: 1.375, z: 0.017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.039, y: 1.556, z: 0.10984933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3077423455304828899}

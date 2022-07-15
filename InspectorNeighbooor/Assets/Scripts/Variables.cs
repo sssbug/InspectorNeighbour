@@ -33,7 +33,7 @@ public class Variables : MonoBehaviour
 
     
     public Camera playerCamera;
-
+    public GameObject cameraBody;
     
     public GameObject pin;
     
@@ -75,6 +75,7 @@ public class Variables : MonoBehaviour
     public float mouseSensivity = 100f;
     [HideInInspector]
     public float xRotation = 0f;
+    public float yRotation = 0f;
     public bool mouseLock; 
     public bool mouseVisible;
     public bool screenLock;
