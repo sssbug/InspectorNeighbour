@@ -12,7 +12,7 @@ public class CameraZoom : MonoBehaviour
     {
 
         variables = GameObject.Find("VariablesController").GetComponent<Variables>();
-
+        variables.normal = GetComponent<Camera>().fieldOfView;
     }
 
 

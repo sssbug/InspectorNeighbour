@@ -61,7 +61,7 @@ public class Variables : MonoBehaviour
     [Header("CameraZoom")]
 
     public int zoom = 20;
-    public int normal = 60;
+    public float normal;
     public float smooth = 5;
     [HideInInspector]
     public bool isZoomed = false;
