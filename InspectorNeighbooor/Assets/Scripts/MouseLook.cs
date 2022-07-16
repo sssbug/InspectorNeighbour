@@ -30,7 +30,7 @@ public class MouseLook : MonoBehaviour
             
 
             variables.xRotation -= mouseY;
-            variables.xRotation = Mathf.Clamp(variables.xRotation, -90f, 90);
+            variables.xRotation = Mathf.Clamp(variables.xRotation, -65f, 65);
 
             transform.localRotation = Quaternion.Euler(variables.xRotation, 0, 0);
             variables.playerBody.transform.Rotate(Vector3.up * mouseX);

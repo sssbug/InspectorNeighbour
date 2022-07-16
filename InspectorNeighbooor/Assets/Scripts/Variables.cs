@@ -39,7 +39,7 @@ public class Variables : MonoBehaviour
     
     [HideInInspector]
     public GameObject inspected;
-
+    public GameObject AddButton;
     
     [HideInInspector]
     public GameObject player;

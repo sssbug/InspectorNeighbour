@@ -49,11 +49,17 @@ public class MouseController : MonoBehaviour
                         variables.originalRot = myRayCastHit.transform.rotation;
                         variables.onInspected = true;
                         variables.orginalScale = myRayCastHit.transform.localScale;
+                        variables.AddButton.SetActive(true);
+                        if (variables.onInspected)
+                        {
+                            variables.inspected.GetComponent<Collider>().isTrigger = true;
+                        }
+                        
                         if (variables.inspected.GetComponent<Rigidbody>() != null)
                         {
                             myRayCastHit.rigidbody.isKinematic = true;
                         }
-                        
+
                         StartCoroutine(pickupItem());
                     }
                 }
@@ -68,12 +74,12 @@ public class MouseController : MonoBehaviour
             variables.screenLock = false;
             variables.MovementLock = false;
 
-            
+
             if (variables.inspected.GetComponent<Rigidbody>() != null)
             {
                 variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
             }
-            
+
             variables.onInspected = false;
         }
 
@@ -81,6 +87,11 @@ public class MouseController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            if (variables.onInspected)
+            {
+                variables.inspected.GetComponent<Collider>().isTrigger = false;
+            }
+            variables.AddButton.SetActive(false);
             variables.mouseLock = true;
             variables.mouseVisible = false;
             variables.screenLock = false;
@@ -107,7 +118,7 @@ public class MouseController : MonoBehaviour
                     {
                         if (myRayCastHit.collider.gameObject.layer == 8)
                         {
-                            
+
                             Destroy(myRayCastHit.collider.gameObject);
                         }
                     }
@@ -143,7 +154,7 @@ public class MouseController : MonoBehaviour
         }
         else if (variables.inspected != null)
         {
-           
+
             variables.inspected.transform.SetParent(null);
             variables.inspected.transform.position = Vector3.Lerp(variables.inspected.transform.position, variables.originalPos, 0.2f);
             variables.inspected.transform.rotation = Quaternion.Euler(variables.originalRot.x, variables.originalRot.y, -90);
@@ -157,7 +168,7 @@ public class MouseController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.X))
                 {
 
-                    variables.pinClone = Instantiate(variables.pin, myRayCastHit.point + new Vector3(-.1f,0,0), Quaternion.identity);
+                    variables.pinClone = Instantiate(variables.pin, myRayCastHit.point + new Vector3(-.1f, 0, 0), Quaternion.identity);
                     variables.pinClone.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
                 }
@@ -185,7 +196,7 @@ public class MouseController : MonoBehaviour
                         variables.MovementLock = true;
                     }
                 }
-                 
+
             }
 
         }

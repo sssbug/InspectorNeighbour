@@ -8,6 +8,7 @@ namespace Hel.Items.Inventories
     /// </summary>
     public abstract class InventoryItem : HotbarItem
     {
+        
         [Header("Item Data")]
         [SerializeField] private Rarity rarity = null;
         [SerializeField] private int sellPrice = 1;

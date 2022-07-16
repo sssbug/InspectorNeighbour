@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Key
   icon: {fileID: 21300000, guid: 7ae9d2c635ae1274091b08b9b24d09cb, type: 3}
-  rarity: {fileID: 11400000, guid: f91e4a173956d9545a9dc0b5fe6bca84, type: 2}
+  rarity: {fileID: 11400000, guid: 5366b8cf6e769fa4eaf74d97249b9018, type: 2}
   sellPrice: 1
-  maxStack: 1
+  maxStack: 20
   onUseablePressed: {fileID: 11400000, guid: f7e99d76292b9ba4eb3cd9ae4d33beb4, type: 2}
   useText: You can open any door.

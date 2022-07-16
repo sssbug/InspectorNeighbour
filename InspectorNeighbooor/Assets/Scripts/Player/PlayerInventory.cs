@@ -13,6 +13,7 @@ namespace Hel.Player
     {
         [Header("Events")]
         [SerializeField] private VoidEvent onInventoryItemsUpdated = null;
+        public ItemSlot testItemSlot = new ItemSlot();
 
         public int LoadPriority { get { return 1000; } }
 
@@ -28,6 +29,10 @@ namespace Hel.Player
         {
             GameSaveHandler.LoadFile("player_inventory", ItemHolder);
             onInventoryItemsUpdated.Raise();
+        }
+        public void TestAdd()
+        {
+            ItemHolder.AddItem(testItemSlot);
         }
     }
 }
