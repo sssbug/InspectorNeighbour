@@ -48,9 +48,9 @@ public class PlayerMove : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.W))
             {
+                animator.SetBool("isBack", false);
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isWalk", true);
-
 
                 Vector3 move =  transform.forward * z;
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
@@ -58,7 +58,9 @@ public class PlayerMove : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.S))
             {
-
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isWalk", false);
+                animator.SetBool("isBack", true);
                 Vector3 move = transform.forward * z;
                 variables.controller.Move(move * variables.PlayerSpeed * Time.deltaTime);
 
@@ -75,8 +77,10 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                animator.SetBool("isIdle", true);
                 animator.SetBool("isWalk", false);
+                animator.SetBool("isBack", false);
+                animator.SetBool("isIdle", true);
+                
                 return;
                 
             }
