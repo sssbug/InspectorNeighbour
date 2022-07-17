@@ -94,5 +94,9 @@ public class Variables : MonoBehaviour
     public List<GameObject> cardList = new List<GameObject>();
     public GameObject card;
 
+    [Header("PickUp")]
+
+    public bool pickUpOpen = false;
+    public bool pickUpClose = true;
 
 }
