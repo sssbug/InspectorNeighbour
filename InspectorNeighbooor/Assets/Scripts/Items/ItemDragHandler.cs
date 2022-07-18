@@ -11,17 +11,24 @@ namespace Hel.Items
     [RequireComponent(typeof(CanvasGroup))]
     public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
-         [SerializeField] protected ItemSlotUI itemSlotUI = null;
-         [SerializeField] protected HotbarItemEvent onMouseStartHoverItem = null;
-         [SerializeField] protected VoidEvent onMouseEndHoverItem = null;
+        [SerializeField] protected ItemSlotUI itemSlotUI = null;
+        [SerializeField] protected HotbarItemEvent onMouseStartHoverItem = null;
+        [SerializeField] protected VoidEvent onMouseEndHoverItem = null;
 
         private CanvasGroup canvasGroup = null;
         private Transform originalParent = null;
         private bool isHovering = false;
-
+        private Variables variables;
         public ItemSlotUI ItemSlotUI { get { return itemSlotUI; } }
 
-        protected virtual void Start() => canvasGroup = GetComponent<CanvasGroup>();
+        protected virtual void Start()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+            variables = GameObject.Find("VariablesController").GetComponent<Variables>();
+
+        }
+        
+
 
         private void OnDisable()
         {
@@ -71,6 +78,15 @@ namespace Hel.Items
                 transform.SetParent(originalParent);
                 transform.localPosition = Vector3.zero;
                 canvasGroup.blocksRaycasts = true;
+            }
+        }
+
+        public virtual void OnPointRightClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                variables.pivot.SetActive(true);
+                variables.pivot.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             }
         }
 

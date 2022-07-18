@@ -10,7 +10,7 @@ namespace Hel.Player
     /// </summary>
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Player/Inventory")]
     public class PlayerInventory : ScriptableObject, ISaveable
-    {
+    { 
         [Header("Events")]
         [SerializeField] private VoidEvent onInventoryItemsUpdated = null;
         public ItemSlot testItemSlot = new ItemSlot();

@@ -99,4 +99,8 @@ public class Variables : MonoBehaviour
     public bool pickUpOpen = false;
     public bool pickUpClose = true;
 
+    [Header("InventoryUI")]
+
+    public GameObject pivot;
+
 }

@@ -97,7 +97,7 @@ namespace Hel.Items
             return itemSlot;
         }
 
-        public void RemoveItem(InventoryItem itemToRemove, int quantityToRemove = 1)
+        public void RemoveItem(InventoryItem itemToRemove, int quantityToRemove = 1) 
         {
             //Loop through each item slot.
             for (int i = 0; i < itemSlots.Length; i++)
