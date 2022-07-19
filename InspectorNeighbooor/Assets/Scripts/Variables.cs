@@ -1,3 +1,4 @@
+using Hel.Items.Inventories;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,6 @@ using UnityEngine.UI;
 public class Variables : MonoBehaviour
 {
 
-   
-
-    private void Update()
-    {
-        
-
-    }
     [Header("Album")]
     
     public GameObject slot;
@@ -110,5 +104,10 @@ public class Variables : MonoBehaviour
     [Header("InventoryUI")]
 
     public GameObject pivot;
+    [HideInInspector]
+    public InventorySlot thisSlott = null;
+    public ItemDestroyer itemDestroyer = null;
+
+    public bool hover;
 
 }

@@ -81,14 +81,7 @@ namespace Hel.Items
             }
         }
 
-        public virtual void OnPointRightClick(PointerEventData eventData)
-        {
-            if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                variables.pivot.SetActive(true);
-                variables.pivot.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            }
-        }
+        
 
         public void OnPointerEnter(PointerEventData eventData)
         {

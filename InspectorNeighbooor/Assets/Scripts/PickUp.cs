@@ -10,9 +10,7 @@ public class PickUp : MonoBehaviour
 
     private void Start()
     {
-
         variables = GameObject.Find("VariablesController").GetComponent<Variables>();
-
     }
 
 
