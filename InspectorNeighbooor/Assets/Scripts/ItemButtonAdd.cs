@@ -29,15 +29,13 @@ public class ItemButtonAdd : MonoBehaviour
 
                     Inventory.testItemSlot.item = Con[i];
                     Inventory.TestAdd();
+                    variables.onInspected = false;
                     variables.mouseLock = true;
                     variables.mouseVisible = false;
                     variables.screenLock = false;
                     variables.MovementLock = false;
                     gameObject.SetActive(false);
-                    variables.ObjectList.Remove(variables.inspected);
                     Destroy(variables.inspected);
-                    variables.inspected = null;
-                    variables.onInspected = false;
                 }
 
             }

@@ -19,10 +19,8 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
-        if (variables.pickUpPivot)
-        {
-            Pick();
-        }
+
+        Pick();
 
     }
 
@@ -44,41 +42,38 @@ public class PickUp : MonoBehaviour
 
         if (variables.pickUpOpen == true)
         {
-            if (!variables.onInspected)
+
+            variables.mouseLock = false;
+            variables.mouseVisible = true;
+            variables.screenLock = true;
+            variables.MovementLock = true;
+
+            if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
             {
-                variables.mouseLock = false;
-                variables.mouseVisible = true;
-                variables.screenLock = true;
-                variables.MovementLock = true;
-
-                if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                if (myRayCastHit.collider.gameObject.layer == 7 && !variables.onInspected)
                 {
-                    if (myRayCastHit.collider.gameObject.layer == 7 && !variables.onInspected)
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        variables.inspected = myRayCastHit.transform.gameObject;
+                        variables.originalPos = myRayCastHit.transform.position;
+                        variables.originalRot = myRayCastHit.transform.rotation;
+                        variables.onInspected = true;
+                        variables.orginalScale = myRayCastHit.transform.localScale;
+                        variables.AddButton.SetActive(true);
+                        if (variables.onInspected)
                         {
-                            variables.inspected = myRayCastHit.transform.gameObject;
-                            variables.originalPos = myRayCastHit.transform.position;
-                            variables.originalRot = myRayCastHit.transform.rotation;
-                            variables.onInspected = true;
-                            variables.orginalScale = myRayCastHit.transform.localScale;
-                            variables.AddButton.SetActive(true);
-                            if (variables.onInspected)
-                            {
-                                variables.inspected.GetComponent<Collider>().isTrigger = true;
-                            }
-
-                            if (variables.inspected.GetComponent<Rigidbody>() != null)
-                            {
-                                myRayCastHit.rigidbody.isKinematic = true;
-                            }
-
-                            StartCoroutine(pickupItem());
+                            variables.inspected.GetComponent<Collider>().isTrigger = true;
                         }
+
+                        if (variables.inspected.GetComponent<Rigidbody>() != null)
+                        {
+                            myRayCastHit.rigidbody.isKinematic = true;
+                        }
+
+                        StartCoroutine(pickupItem());
                     }
                 }
             }
-               
 
         }
         else if (variables.onInspected == true && variables.pickUpClose == true)
@@ -172,7 +167,7 @@ public class PickUp : MonoBehaviour
         {
 
             variables.inspected.transform.SetParent(null);
-            variables.inspected.transform.position = variables.originalPos;
+            variables.inspected.transform.position = Vector3.Lerp(variables.inspected.transform.position, variables.originalPos, 0.2f);
             variables.inspected.transform.rotation = Quaternion.Euler(variables.originalRot.x, variables.originalRot.y, -90);
         }
     }
