@@ -17,8 +17,8 @@ TagManager:
   - Pickable
   - Book
   - Lootable
-  - 
-  - 
+  - Pano
+  - Ground
   - 
   - Interactable
   - Post

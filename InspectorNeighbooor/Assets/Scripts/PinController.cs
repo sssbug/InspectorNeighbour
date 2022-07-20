@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class MouseController : MonoBehaviour
+public class PinController : MonoBehaviour
 {
 
 
@@ -20,13 +20,13 @@ public class MouseController : MonoBehaviour
 
     public void Update()
     {
-        Mouse();
+        Pin();
     }
 
 
 
 
-    private void Mouse()
+    private void Pin()
     {
         variables.playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         Ray myRay = variables.playerCamera.ScreenPointToRay(Input.mousePosition);
@@ -68,13 +68,7 @@ public class MouseController : MonoBehaviour
                         variables.MovementLock = true;
                     }
                 }
-
             }
-
         }
     }
-    
-
-
-
 }
