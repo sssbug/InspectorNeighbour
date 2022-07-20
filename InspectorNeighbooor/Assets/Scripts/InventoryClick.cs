@@ -1,35 +1,11 @@
-using UnityEngine.EventSystems;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-
-namespace Hel.Items.Hotbars
+public class InventoryClick : MonoBehaviour
 {
-
-
-
-
-    public class InventoryClick : ItemDragHandler
+    private void Update()
     {
-
-        private Variables variables;
-
-
-        private void Start()
-        {
-
-            variables = GameObject.Find("VariablesController").GetComponent<Variables>();
-
-        }
-        public override void OnPointRightClick(PointerEventData eventData)
-        {
-            base.OnPointRightClick(eventData);
-
-            if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                variables.pivot.SetActive(true);
-                variables.pivot.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            }
-        }
+        
     }
 }

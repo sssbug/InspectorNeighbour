@@ -5,14 +5,6 @@ using UnityEngine.UI;
 
 public class Variables : MonoBehaviour
 {
-
-   
-
-    private void Update()
-    {
-        
-
-    }
     [Header("Album")]
     
     public GameObject slot;
