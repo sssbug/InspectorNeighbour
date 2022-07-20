@@ -47,6 +47,8 @@ public class Variables : MonoBehaviour
     
     [HideInInspector]
     public GameObject inspected;
+    [HideInInspector]
+    public GameObject inspectedPivot;
     public GameObject AddButton;
     
     [HideInInspector]
@@ -55,6 +57,8 @@ public class Variables : MonoBehaviour
     public GameObject pinClone;
     [HideInInspector]
     public bool onInspected = false;
+    [HideInInspector]
+    public bool onInspectedPivot = false;
     [HideInInspector]
     public float lastFrameMousePosX;
     [HideInInspector]
@@ -106,9 +110,18 @@ public class Variables : MonoBehaviour
 
     public bool pickUpOpen = false;
     public bool pickUpClose = true;
+    public bool pickUpPivot = true;
 
     [Header("InventoryUI")]
 
     public GameObject pivot;
+<<<<<<< HEAD
 
+=======
+    [HideInInspector]
+    public InventorySlot thisSlott = null;
+    public ItemDestroyer itemDestroyer = null;
+    public bool hover;
+    public List<GameObject> ObjectList = new List<GameObject>();
+>>>>>>> d9d5c77 (7/20/2022)
 }

@@ -10,7 +10,7 @@ namespace Hel.Items.Inventories
     public class ItemDestroyer : MonoBehaviour
     {
         [SerializeField] private PlayerInventory playerInventory = null;
-        [SerializeField] private TextMeshProUGUI areYouSureText = null;
+        //[SerializeField] private TextMeshProUGUI areYouSureText = null;
 
         private int slotIndex = 0;
 
@@ -21,11 +21,11 @@ namespace Hel.Items.Inventories
             //Cache the slot index of item that is being destroyed.
             this.slotIndex = slotIndex;
 
-            //Set the UI prompt text.
-            areYouSureText.text = $"Are you sure you wish to destroy {item.ColouredName}?";
+            ////Set the UI prompt text.
+            //areYouSureText.text = $"Are you sure you wish to destroy {item.ColouredName}?";
 
-            //Enable this game object.
-            gameObject.SetActive(true);
+            ////Enable this game object.
+            //gameObject.SetActive(true);
         }
 
         public void Destroy()
@@ -34,7 +34,7 @@ namespace Hel.Items.Inventories
             playerInventory.ItemHolder.RemoveAt(slotIndex);
 
             //Disable this game object.
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }
