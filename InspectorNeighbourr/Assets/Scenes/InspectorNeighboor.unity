@@ -15483,6 +15483,7 @@ MonoBehaviour:
   thisSlott: {fileID: 0}
   itemDestroyer: {fileID: 1542216327}
   hover: 0
+  delOpen: 0
 --- !u!4 &1685822620
 Transform:
   m_ObjectHideFlags: 0
@@ -16478,6 +16479,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4069866757011423543, guid: 931360af4cedecd43969d1fd3cd868e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5309876638723301317, guid: 931360af4cedecd43969d1fd3cd868e3, type: 3}
       propertyPath: m_Name
       value: InventoryUI
@@ -16763,6 +16768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52650a3521d195428ab687bb9636ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  del:
+  - {fileID: 6482902766246321806, guid: 9122acab4ed2ba243bb14eee3ad08f58, type: 3}
 --- !u!1 &1833358303
 GameObject:
   m_ObjectHideFlags: 0
@@ -23620,7 +23627,7 @@ GameObject:
   - component: {fileID: 8661741463647400317}
   - component: {fileID: 6364241455162394962}
   - component: {fileID: 6364241455162394961}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24734,7 +24741,7 @@ GameObject:
   - component: {fileID: 8721082830415231792}
   - component: {fileID: 6364241454149798916}
   - component: {fileID: 6364241454149798923}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25961,7 +25968,7 @@ GameObject:
   - component: {fileID: 2546495952335730684}
   - component: {fileID: 8146623290846881625}
   - component: {fileID: 6364241454457649173}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.108
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36430,7 +36437,7 @@ GameObject:
   - component: {fileID: 3400105957151945472}
   - component: {fileID: 145756425668941844}
   - component: {fileID: 6364241455107416067}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37313,7 +37320,7 @@ GameObject:
   - component: {fileID: 9062559846337059753}
   - component: {fileID: 6364241455549234648}
   - component: {fileID: 6364241455549234655}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.106
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48451,7 +48458,7 @@ GameObject:
   - component: {fileID: 5527431839814222374}
   - component: {fileID: 6364241455553983830}
   - component: {fileID: 6364241455553983829}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane.105
   m_TagString: Untagged
   m_Icon: {fileID: 0}

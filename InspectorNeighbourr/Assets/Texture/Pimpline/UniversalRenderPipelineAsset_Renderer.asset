@@ -17,11 +17,11 @@ MonoBehaviour:
   m_Settings:
     Downsample: 1
     Source: 0
-    NormalSamples: 2
-    Intensity: 7.7
-    DirectLightingStrength: 0.942
+    NormalSamples: 1
+    Intensity: 0.42
+    DirectLightingStrength: 1
     Radius: 0.035
-    SampleCount: 17
+    SampleCount: 20
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_DefaultStencilState:
-    overrideStencilState: 0
+    overrideStencilState: 1
     stencilReference: 0
     stencilCompareFunction: 8
     passOperation: 2

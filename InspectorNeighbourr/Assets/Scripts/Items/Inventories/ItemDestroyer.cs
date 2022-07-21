@@ -22,10 +22,10 @@ namespace Hel.Items.Inventories
             this.slotIndex = slotIndex;
 
             //Set the UI prompt text.
-            areYouSureText.text = $"Are you sure you wish to destroy {item.ColouredName}?";
+            //areYouSureText.text = $"Are you sure you wish to destroy {item.ColouredName}?";
 
-            //Enable this game object.
-            gameObject.SetActive(true);
+            ////Enable this game object.
+            //gameObject.SetActive(true);
         }
 
         public void Destroy()
@@ -33,8 +33,8 @@ namespace Hel.Items.Inventories
             //Remove the item from the cached slot index.
             playerInventory.ItemHolder.RemoveAt(slotIndex);
 
-            //Disable this game object.
-            gameObject.SetActive(false);
+            ////Disable this game object.
+            //gameObject.SetActive(false);
         }
     }
 }

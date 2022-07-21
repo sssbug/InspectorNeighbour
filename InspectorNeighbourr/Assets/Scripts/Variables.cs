@@ -109,5 +109,5 @@ public class Variables : MonoBehaviour
     public ItemDestroyer itemDestroyer = null;
 
     public bool hover;
-
+    public bool delOpen;
 }
