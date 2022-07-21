@@ -8,7 +8,7 @@ public class PivotClick : MonoBehaviour
     public List<GameObject> del = new List<GameObject>();
     private GameObject spawned;
     private bool point;
-    private bool click;
+    private bool click = true;
     private void OnEnable()
     {
 
@@ -23,14 +23,22 @@ public class PivotClick : MonoBehaviour
 
     public void Del()
     {
-        variables.delOpen = true;
-        point = true;
-        click = true;
+        if (!variables.onInspected)
+        {
+            variables.delOpen = true;
+            point = true;
+            click = true;
+        }
         
+
+
+
     }
 
     private void Dell()
     {
+
+        
         if (variables.delOpen)
         {
             variables.playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -42,6 +50,7 @@ public class PivotClick : MonoBehaviour
             {
                 variables.pickUpOpen = !variables.pickUpOpen;
                 variables.pickUpClose = !variables.pickUpClose;
+
             }
 
 
@@ -55,43 +64,37 @@ public class PivotClick : MonoBehaviour
                 variables.screenLock = true;
                 variables.MovementLock = true;
 
-                //if (point)
+                if (point)
+                {
+                    for (int i = 0; i < del.Count; i++)
+                    {
+                        if (variables.thisSlott.ItemSlot.item.name == del[i].name)
+                        {
+                            spawned = Instantiate(del[i], variables.playerSocet.transform.position, Quaternion.identity);
+                            
+                            spawned.name = variables.thisSlott.ItemSlot.item.name;
+                            variables.inspected = spawned.transform.gameObject;
+                            variables.originalPos = spawned.transform.position;
+                            variables.originalRot = spawned.transform.rotation;
+                            variables.onInspected = true;
+                            variables.orginalScale = spawned.transform.localScale;
+                            variables.AddButton.SetActive(true);
+                            point = false;
+                        }
+                    }
+
+                }
+
+
+
+                
+
+
+                //if (variables.inspected)
                 //{
-                //    for (int i = 0; i < del.Count; i++)
-                //    {
-                //        if (variables.thisSlott.ItemSlot.item.name == del[i].name)
-                //        {
-                //            spawned = Instantiate(del[i], variables.playerSocet.transform.position, Quaternion.identity);
-                //            spawned.GetComponent<Collider>().enabled = false;
-                //            spawned.name = variables.thisSlott.ItemSlot.item.name;
-                //            variables.inspected = spawned.transform.gameObject;
-                //            variables.originalPos = spawned.transform.position;
-                //            variables.originalRot = spawned.transform.rotation;
-                //            variables.onInspected = true;
-                //            variables.orginalScale = spawned.transform.localScale;
-                //            variables.AddButton.SetActive(true);
-                //        }
-                //        else
-                //        {
-                //            point = false;
-                //        }
-                        
-                //    }
+                //    StartCoroutine(pickupItem());
                 //}
-                
 
-                
-                if (variables.onInspected)
-                {
-                    variables.inspected.GetComponent<Collider>().isTrigger = true;
-                }
-
-                if (variables.inspected.GetComponent<Rigidbody>() != null)
-                {
-                    variables.inspected.GetComponent<Rigidbody>().isKinematic = true;
-                }
-
-                StartCoroutine(pickupItem());
 
 
             }
@@ -105,10 +108,7 @@ public class PivotClick : MonoBehaviour
                 variables.MovementLock = false;
 
 
-                if (variables.inspected.GetComponent<Rigidbody>() != null)
-                {
-                    variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
-                }
+                
 
                 variables.onInspected = false;
             }
@@ -117,10 +117,7 @@ public class PivotClick : MonoBehaviour
 
             if (variables.pickUpClose == true)
             {
-                if (variables.onInspected)
-                {
-                    variables.inspected.GetComponent<Collider>().isTrigger = false;
-                }
+                
                 variables.AddButton.SetActive(false);
                 variables.mouseLock = true;
                 variables.mouseVisible = false;
@@ -184,36 +181,42 @@ public class PivotClick : MonoBehaviour
             }
             else if (variables.inspected != null)
             {
-                //variables.inspected.transform.SetParent(null);
-                //if (Physics.Raycast(myRay, out myRayCastHit, 20f))
-                //{
-                //    if (myRayCastHit.collider.gameObject.layer == 11)
-                //    {
-                //        if (Input.GetMouseButtonDown(0))
-                //        {
-                //            click = false;
-                //            variables.inspected.transform.position = myRayCastHit.point;
-                //            variables.inspected.GetComponent<Collider>().enabled = true;
-                //            variables.delOpen = false;
-                //            variables.inspected = null;
-                //        }
-                //        if (click)
-                //        {
-                //            variables.inspected.transform.position = myRayCastHit.point;
-                //            variables.inspected.transform.rotation = Quaternion.Euler(variables.originalRot.x, variables.originalRot.y, -90);
-                //        }
-                            
-                        
-                //    }
-                //}
+                variables.inspected.transform.SetParent(null);
+                if (Physics.Raycast(myRay, out myRayCastHit, 20f))
+                {
+                    if (myRayCastHit.collider.gameObject.layer == 11)
+                    {
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            click = false;
+                            variables.inspected.transform.position = myRayCastHit.point;
+                            variables.inspected.GetComponent<Collider>().enabled = true;
+                            variables.inspected = null;
+                            variables.delOpen = false;
+                        }
+                        if (click)
+                        {
+                            variables.inspected.transform.position = myRayCastHit.point;
+                            variables.inspected.transform.rotation = Quaternion.Euler(variables.originalRot.x, variables.originalRot.y, -90);
+
+
+                        }
+
+
+                    }
+                }
+                if (variables.inspected)
+                {
+                    variables.inspected.GetComponent<Collider>().enabled = false;
+
+                }
+               
             }
-        }
-        if (point)
-        {
+
             variables.itemDestroyer.Destroy();
             variables.pivot.SetActive(false);
         }
-        
+
     }
 
 

@@ -20,10 +20,13 @@ public class PickUp : MonoBehaviour
 
         Pick();
 
+
+
     }
 
     private void Pick()
     {
+
         if (!variables.delOpen)
         {
             variables.playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -65,10 +68,6 @@ public class PickUp : MonoBehaviour
                                 variables.inspected.GetComponent<Collider>().enabled = false;
                             }
 
-                            if (variables.inspected.GetComponent<Rigidbody>() != null)
-                            {
-                                myRayCastHit.rigidbody.isKinematic = true;
-                            }
 
                             StartCoroutine(pickupItem());
                         }
@@ -86,10 +85,7 @@ public class PickUp : MonoBehaviour
                 variables.MovementLock = false;
 
 
-                if (variables.inspected.GetComponent<Rigidbody>() != null)
-                {
-                    variables.inspected.GetComponent<Rigidbody>().isKinematic = false;
-                }
+                
 
                 variables.onInspected = false;
             }
@@ -127,7 +123,7 @@ public class PickUp : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0))
                         {
-                            if (myRayCastHit.collider.gameObject.layer == 8)
+                            if (myRayCastHit.collider.gameObject.layer == 8 /*BookLayer*/)
                             {
 
                                 Destroy(myRayCastHit.collider.gameObject);
@@ -172,6 +168,7 @@ public class PickUp : MonoBehaviour
                 variables.inspected.GetComponent<Collider>().enabled = true;
             }
         }
+
     }
 
 

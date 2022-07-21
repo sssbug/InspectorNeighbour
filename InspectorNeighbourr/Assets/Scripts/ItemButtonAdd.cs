@@ -34,9 +34,11 @@ public class ItemButtonAdd : MonoBehaviour
                     variables.mouseVisible = false;
                     variables.screenLock = false;
                     variables.MovementLock = false;
-
+                    variables.delOpen = false;
                     gameObject.SetActive(false);
+                    
                     Destroy(variables.inspected);
+                    variables.inspected = null;
                 }
 
             }
