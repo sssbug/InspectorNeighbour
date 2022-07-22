@@ -29,7 +29,7 @@ public class PivotClick : MonoBehaviour
             point = true;
             click = true;
         }
-        
+
 
 
 
@@ -38,7 +38,7 @@ public class PivotClick : MonoBehaviour
     private void Dell()
     {
 
-        
+
         if (variables.delOpen)
         {
             variables.playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -71,7 +71,7 @@ public class PivotClick : MonoBehaviour
                         if (variables.thisSlott.ItemSlot.item.name == del[i].name)
                         {
                             spawned = Instantiate(del[i], variables.playerSocet.transform.position, Quaternion.identity);
-                            
+
                             spawned.name = variables.thisSlott.ItemSlot.item.name;
                             variables.inspected = spawned.transform.gameObject;
                             variables.originalPos = spawned.transform.position;
@@ -87,13 +87,8 @@ public class PivotClick : MonoBehaviour
 
 
 
-                
 
-
-                //if (variables.inspected)
-                //{
-                //    StartCoroutine(pickupItem());
-                //}
+                variables.inspected.transform.SetParent(variables.playerSocet);
 
 
 
@@ -108,7 +103,7 @@ public class PivotClick : MonoBehaviour
                 variables.MovementLock = false;
 
 
-                
+
 
                 variables.onInspected = false;
             }
@@ -117,7 +112,7 @@ public class PivotClick : MonoBehaviour
 
             if (variables.pickUpClose == true)
             {
-                
+
                 variables.AddButton.SetActive(false);
                 variables.mouseLock = true;
                 variables.mouseVisible = false;
@@ -127,21 +122,13 @@ public class PivotClick : MonoBehaviour
 
             if (variables.onInspected)
             {
-                if (variables.inspected.transform.position == variables.playerSocet.position)
-                {
-                    variables.playerSocet.position = variables.inspected.transform.position;
 
-                }
-                else
-                {
 
-                    variables.inspected.transform.position = Vector3.Lerp(variables.inspected.transform.position, variables.playerSocet.position, 0.2f);
-                }
-                if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
+                if (Input.GetMouseButton(1))
                 {
-                    if (Input.GetMouseButton(1))
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.GetMouseButtonDown(0))
+                        if (Physics.Raycast(myRay, out myRayCastHit, Mathf.Infinity))
                         {
                             if (myRayCastHit.collider.gameObject.layer == 8)
                             {
@@ -150,32 +137,33 @@ public class PivotClick : MonoBehaviour
                             }
                         }
                     }
-                    else
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            variables.lastFrameMousePosX = Input.mousePosition.x;
-                            variables.lastFrameMousePosY = Input.mousePosition.y;
-                        }
-                        if (Input.GetMouseButton(0))
-                        {
+                        variables.lastFrameMousePosX = Input.mousePosition.x;
+                        variables.lastFrameMousePosY = Input.mousePosition.y;
+                    }
+                    if (Input.GetMouseButton(0))
+                    {
 
-                            float _inputDifferenceY = Input.mousePosition.x - variables.lastFrameMousePosX;
-                            float _inputDifferenceX = Input.mousePosition.y - variables.lastFrameMousePosY;
-                            variables.rotationY = Quaternion.Euler(0f, _inputDifferenceY * variables.sensitivity * Time.deltaTime, -_inputDifferenceX * variables.sensitivity * Time.deltaTime);
-                            variables.lastFrameMousePosX = Input.mousePosition.x;
-                            variables.lastFrameMousePosY = Input.mousePosition.y;
+                        float _inputDifferenceY = Input.mousePosition.x - variables.lastFrameMousePosX;
+                        float _inputDifferenceX = Input.mousePosition.y - variables.lastFrameMousePosY;
+                        variables.rotationY = Quaternion.Euler(0f, _inputDifferenceY * variables.sensitivity * Time.deltaTime, -_inputDifferenceX * variables.sensitivity * Time.deltaTime);
+                        variables.lastFrameMousePosX = Input.mousePosition.x;
+                        variables.lastFrameMousePosY = Input.mousePosition.y;
 
-                        }
+                    }
 
-                        if (Input.GetMouseButtonUp(0))
-                        {
+                    if (Input.GetMouseButtonUp(0))
+                    {
 
-                            variables.rotationY = Quaternion.Euler(0f, 0f, 0f);
+                        variables.rotationY = Quaternion.Euler(0f, 0f, 0f);
 
-                        }
                     }
                 }
+
                 variables.playerSocet.transform.rotation = variables.rotationY * variables.playerSocet.transform.rotation;
 
             }
@@ -210,7 +198,7 @@ public class PivotClick : MonoBehaviour
                     variables.inspected.GetComponent<Collider>().enabled = false;
 
                 }
-               
+
             }
 
             variables.itemDestroyer.Destroy();
@@ -225,7 +213,7 @@ public class PivotClick : MonoBehaviour
         variables.inspected.transform.localScale = variables.orginalScale;
         // burada haraketi kapat
         yield return new WaitForSeconds(0.2f);
-        variables.inspected.transform.SetParent(variables.playerSocet);
+        
     }
 
 

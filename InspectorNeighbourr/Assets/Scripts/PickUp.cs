@@ -107,6 +107,8 @@ public class PickUp : MonoBehaviour
 
             if (variables.onInspected)
             {
+
+
                 if (variables.inspected.transform.position == variables.playerSocet.position)
                 {
                     variables.playerSocet.position = variables.inspected.transform.position;
