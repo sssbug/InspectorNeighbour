@@ -15,11 +15,11 @@ TagManager:
   - UI
   - Pin
   - Pickable
-  - Book
+  - Kanit
   - Lootable
   - Pano
   - Ground
-  - 
+  - DragAndDrop
   - Interactable
   - Post
   - 
